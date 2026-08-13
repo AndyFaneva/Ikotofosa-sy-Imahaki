@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://1vvbw6j2aoia"]
+
+[ext_resource type="Script" uid="uid://c7t3u734djif1" path="res://Scripts/Menu/menu_button.gd" id="1_gotic"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lasy"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.97074836, 0.7456804, 0.6046959, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4bxl"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5k35"]
+bg_color = Color(0.3764426, 1.4717686, 1.9035647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9892176, 0.6946948, 0.8746134, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MenuButton" type="Button" unique_id=923234826]
+custom_minimum_size = Vector2(300, 60)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6lasy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o4bxl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y5k35")
+text = "BOUTON"
+script = ExtResource("1_gotic")

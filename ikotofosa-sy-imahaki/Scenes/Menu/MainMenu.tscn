@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cgqc3traqxv6i"]
+
+[ext_resource type="PackedScene" uid="uid://1vvbw6j2aoia" path="res://Ui/Components/menu_button.tscn" id="1_a2ivp"]
+
+[node name="MainMenu" type="Control" unique_id=1928240467]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1026076902]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="CenterContainer" parent="." unique_id=340399183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContainer" type="VBoxContainer" parent="Content" unique_id=54120299]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Logo" type="Label" parent="Content/MenuContainer" unique_id=474169080]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.03191308, 0.022980219, 0.013826643, 1)
+theme_override_font_sizes/font_size = 50
+text = "Ikotofosa Sy Imahaki"
+
+[node name="play_button" parent="Content/MenuContainer" unique_id=923234826 instance=ExtResource("1_a2ivp")]
+layout_mode = 2
+text = "Hilalao"
+
+[node name="settings_button" parent="Content/MenuContainer" unique_id=1765702789 instance=ExtResource("1_a2ivp")]
+layout_mode = 2
+text = "Safidy
+"
+
+[node name="credits_button" parent="Content/MenuContainer" unique_id=643078006 instance=ExtResource("1_a2ivp")]
+layout_mode = 2
+text = "Kredita"
+
+[node name="quit_button" parent="Content/MenuContainer" unique_id=1080354296 instance=ExtResource("1_a2ivp")]
+layout_mode = 2
+text = "Mivoaka"
+
+[node name="VersionLabel" type="Label" parent="." unique_id=3649474]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.006288971, 0.0093377745, 0.0073071127, 1)
+theme_override_font_sizes/font_size = 30
+text = "v0.1.0"
+
+[connection signal="pressed" from="Content/MenuContainer/play_button" to="Content/MenuContainer/play_button" method="_on_pressed"]
+[connection signal="pressed" from="Content/MenuContainer/settings_button" to="Content/MenuContainer/settings_button" method="_on_pressed"]
+[connection signal="pressed" from="Content/MenuContainer/credits_button" to="Content/MenuContainer/credits_button" method="_on_pressed"]
+[connection signal="pressed" from="Content/MenuContainer/quit_button" to="Content/MenuContainer/quit_button" method="_on_pressed"]
