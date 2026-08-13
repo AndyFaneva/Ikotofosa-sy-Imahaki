@@ -1,74 +1,147 @@
 [gd_scene format=3 uid="uid://cgqc3traqxv6i"]
 
-[ext_resource type="PackedScene" uid="uid://1vvbw6j2aoia" path="res://Ui/Components/menu_button.tscn" id="1_a2ivp"]
+[ext_resource type="Script" uid="uid://bwnedgegtgdnx" path="res://Scenes/Menu/main_menu.gd" id="1_35riq"]
+[ext_resource type="Texture2D" uid="uid://b5t75bcyku5hg" path="res://assets/Background/Menu.png" id="1_86uyx"]
+[ext_resource type="Theme" uid="uid://bw44feul3jsdo" path="res://Ui/Themes/main_theme.tres" id="2_ulmy3"]
 
-[node name="MainMenu" type="Control" unique_id=1928240467]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulmy3"]
+bg_color = Color(0.84705883, 0.7176471, 0.69803923, 0.8784314)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.23921569, 0.003921569, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35riq"]
+bg_color = Color(0.7529412, 0.6392157, 0.62352943, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.21176471, 0.015686275, 0.011764706, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj0i0"]
+bg_color = Color(0.49411765, 0.5921569, 0.7019608, 0.8901961)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.05882353, 0.11764706, 0.22745098, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MainMenu" type="Control" unique_id=1733168090]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_35riq")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1026076902]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=128626875]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -262.0
+offset_right = 512.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_86uyx")
+expand_mode = 1
+
+[node name="Background" type="ParallaxBackground" parent="." unique_id=1955092478]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1689199564]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="Content" type="CenterContainer" parent="." unique_id=340399183]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MenuContainer" type="VBoxContainer" parent="Content" unique_id=54120299]
+[node name="Label" type="Label" parent="MarginContainer" unique_id=249017263]
 layout_mode = 2
-theme_override_constants/separation = 20
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "Version 0.1.0"
 
-[node name="Logo" type="Label" parent="Content/MenuContainer" unique_id=474169080]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2064416192]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.03191308, 0.022980219, 0.013826643, 1)
-theme_override_font_sizes/font_size = 50
-text = "Ikotofosa Sy Imahaki"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
 
-[node name="play_button" parent="Content/MenuContainer" unique_id=923234826 instance=ExtResource("1_a2ivp")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1095479134]
 layout_mode = 2
-text = "Hilalao"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
-[node name="settings_button" parent="Content/MenuContainer" unique_id=1765702789 instance=ExtResource("1_a2ivp")]
+[node name="Jouer" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=424139046]
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Safidy
+theme = ExtResource("2_ulmy3")
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
+theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulmy3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35riq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mj0i0")
+text = "Jouer
+
 "
 
-[node name="credits_button" parent="Content/MenuContainer" unique_id=643078006 instance=ExtResource("1_a2ivp")]
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1109747882]
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Kredita"
+theme = ExtResource("2_ulmy3")
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
+theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulmy3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35riq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mj0i0")
+text = "Options
 
-[node name="quit_button" parent="Content/MenuContainer" unique_id=1080354296 instance=ExtResource("1_a2ivp")]
+"
+
+[node name="Quitter" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1885902280]
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Mivoaka"
+theme = ExtResource("2_ulmy3")
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
+theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulmy3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35riq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mj0i0")
+text = "Quitter
 
-[node name="VersionLabel" type="Label" parent="." unique_id=3649474]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -84.0
-offset_top = -42.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.006288971, 0.0093377745, 0.0073071127, 1)
-theme_override_font_sizes/font_size = 30
-text = "v0.1.0"
+"
 
-[connection signal="pressed" from="Content/MenuContainer/play_button" to="Content/MenuContainer/play_button" method="_on_pressed"]
-[connection signal="pressed" from="Content/MenuContainer/settings_button" to="Content/MenuContainer/settings_button" method="_on_pressed"]
-[connection signal="pressed" from="Content/MenuContainer/credits_button" to="Content/MenuContainer/credits_button" method="_on_pressed"]
-[connection signal="pressed" from="Content/MenuContainer/quit_button" to="Content/MenuContainer/quit_button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Jouer" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quitter" to="." method="_on_button_3_pressed"]

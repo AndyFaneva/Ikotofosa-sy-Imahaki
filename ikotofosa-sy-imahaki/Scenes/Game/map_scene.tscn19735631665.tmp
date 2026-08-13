@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://per3hfevun0p"]
+
+[ext_resource type="Script" uid="uid://bvuca6n1jwbfd" path="res://Scenes/Game/map_scene.gd" id="1_mw0iq"]
+
+[node name="MapScene" type="Node2D" unique_id=1457671233]
+script = ExtResource("1_mw0iq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=741050165]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1183187852]
+offset_right = 1021.0
+offset_bottom = 512.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=739225681]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1563120358]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1270965965]
+layout_mode = 2
+text = "Données: En attente..."
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1791943495]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Charger" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1966092182]
+layout_mode = 2
+text = "Charger"
+
+[node name="Quitter" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=851731462]
+layout_mode = 2
+text = "Quitter"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=285781257]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1798158253]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=685742995]
+layout_mode = 2
+
+[node name="OpenFileDialog" type="FileDialog" parent="." unique_id=748629715]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+
+[node name="Timer" type="Timer" parent="." unique_id=2070445978]
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=880634481]
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

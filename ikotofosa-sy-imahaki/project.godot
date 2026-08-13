@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="IkotofosaSyImahaki"
+run/main_scene="uid://cgqc3traqxv6i"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://bowx47d6r5r4q"
 
 [display]
 
@@ -20,6 +25,10 @@ window/size/viewport_width=1024
 window/size/viewport_height=520
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global]
+
+Autoload=false
 
 [physics]
 
