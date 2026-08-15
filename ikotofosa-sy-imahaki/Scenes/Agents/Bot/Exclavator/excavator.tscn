@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c7ub0ulfum25l"]
+
+[ext_resource type="Texture2D" uid="uid://bcxr54guf6ye3" path="res://Scenes/Agents/Bot/Exclavator/frames/idle/Exclavateur-Up.png" id="1_u6olw"]
+[ext_resource type="Script" uid="uid://dx3yx2xuvgk4c" path="res://Scenes/Agents/Bot/Exclavator/excavator.gd" id="1_we37s"]
+[ext_resource type="Texture2D" uid="uid://dbhxqmmnaq6my" path="res://Scenes/Agents/Bot/Exclavator/frames/walk_down/Exclavateur-Down.png" id="2_we37s"]
+[ext_resource type="Texture2D" uid="uid://jwbuu8xv5pji" path="res://Scenes/Agents/Bot/Exclavator/frames/walk-left/Exclavateur-Left.png" id="3_miwho"]
+[ext_resource type="Texture2D" uid="uid://by6hbuohianpg" path="res://Scenes/Agents/Bot/Exclavator/frames/walk_right/Exclavateur-Right.png" id="4_oi0en"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vl6hb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u6olw")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_we37s")
+}],
+"loop": 1,
+"name": &"walk-down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_miwho")
+}],
+"loop": 1,
+"name": &"walk-left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oi0en")
+}],
+"loop": 1,
+"name": &"walk-right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u6olw")
+}],
+"loop": 1,
+"name": &"walk-up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vl6hb"]
+size = Vector2(80, 100)
+
+[node name="Excavator" type="Node2D" unique_id=1872523864]
+script = ExtResource("1_we37s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1625409724]
+sprite_frames = SubResource("SpriteFrames_vl6hb")
+animation = &"walk-up"
+speed_scale = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=62407110]
+position = Vector2(2, 26)
+shape = SubResource("RectangleShape2D_vl6hb")

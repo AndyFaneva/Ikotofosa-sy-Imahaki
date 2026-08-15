@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bwnedgegtgdnx" path="res://Scenes/Menu/main_menu.gd" id="1_35riq"]
 [ext_resource type="Texture2D" uid="uid://b5t75bcyku5hg" path="res://assets/Background/Menu.png" id="1_86uyx"]
-[ext_resource type="Theme" uid="uid://bw44feul3jsdo" path="res://Ui/Themes/main_theme.tres" id="2_ulmy3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulmy3"]
 bg_color = Color(0.84705883, 0.7176471, 0.69803923, 0.8784314)
@@ -49,23 +48,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_35riq")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=128626875]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -262.0
-offset_right = 512.0
-offset_bottom = 258.0
+[node name="Background" type="ParallaxBackground" parent="." unique_id=1955092478]
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1648384923]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_86uyx")
-expand_mode = 1
-
-[node name="Background" type="ParallaxBackground" parent="." unique_id=1955092478]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1689199564]
 layout_mode = 1
@@ -101,7 +92,6 @@ alignment = 1
 [node name="Jouer" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=424139046]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme = ExtResource("2_ulmy3")
 theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
 theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
 theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
@@ -109,14 +99,41 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_ulmy3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_35riq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mj0i0")
-text = "Jouer
+text = "Nouveau jeu
 
+"
+
+[node name="Charger" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=974631683]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
+theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulmy3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35riq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mj0i0")
+text = "Continuer
+
+
+"
+
+[node name="Historique" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=160383038]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
+theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulmy3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_35riq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mj0i0")
+text = "Historique
 "
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1109747882]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme = ExtResource("2_ulmy3")
 theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
 theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
 theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
@@ -131,7 +148,6 @@ text = "Options
 [node name="Quitter" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1885902280]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme = ExtResource("2_ulmy3")
 theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
 theme_override_colors/font_pressed_color = Color(0.23921569, 0.003921569, 0, 1)
 theme_override_colors/font_hover_color = Color(0.08627451, 0.14509805, 0.25882354, 1)
@@ -143,5 +159,6 @@ text = "Quitter
 
 "
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Jouer" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quitter" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Jouer" to="." method="_on_jouer_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Charger" to="." method="_on_charger_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quitter" to="." method="_on_quitter_pressed"]

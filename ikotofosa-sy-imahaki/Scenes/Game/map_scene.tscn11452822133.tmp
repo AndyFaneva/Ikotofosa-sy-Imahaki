@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://per3hfevun0p"]
+
+[ext_resource type="Script" uid="uid://bvuca6n1jwbfd" path="res://Scenes/Game/map_scene.gd" id="1_mw0iq"]
+[ext_resource type="Texture2D" uid="uid://b5t75bcyku5hg" path="res://assets/Background/Menu.png" id="2_v521d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw0iq"]
+bg_color = Color(0.84705883, 0.7176471, 0.69803923, 0.8784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v521d"]
+bg_color = Color(0.84705883, 0.7176471, 0.69803923, 0.8784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae5a2"]
+bg_color = Color(0.49411765, 0.5921569, 0.7019608, 0.8901961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MapScene" type="Node2D" unique_id=1457671233]
+texture_filter = 1
+script = ExtResource("1_mw0iq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=741050165]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1183187852]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=739225681]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1563120358]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1270965965]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Données: En attente..."
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1791943495]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Charger" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1966092182]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_hover_color = Color(0.3764426, 1.4717686, 1.9035647, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mw0iq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v521d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ae5a2")
+text = "Charger"
+
+[node name="Quitter" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=851731462]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_pressed_color = Color(0.41960785, 0.15686275, 0.14901961, 1)
+theme_override_colors/font_hover_color = Color(0.3764426, 1.4717686, 1.9035647, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mw0iq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v521d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ae5a2")
+text = "Quitter"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=285781257]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1798158253]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=685742995]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OpenFileDialog" type="FileDialog" parent="." unique_id=748629715]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+
+[node name="Timer" type="Timer" parent="." unique_id=2070445978]
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=880634481]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MapContainer" unique_id=2121238443]
+
+[node name="MarginContainer" type="MarginContainer" parent="MapContainer/CanvasLayer" unique_id=689191689]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MapContainer/CanvasLayer/MarginContainer" unique_id=1946343920]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=845638109]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground" unique_id=159011846]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v521d")
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

@@ -18,11 +18,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://bowx47d6r5r4q"
+AudioManager="*uid://bce5phc8t3hqn"
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=520
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

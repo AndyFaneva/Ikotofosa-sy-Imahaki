@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://per3hfevun0p"]
 
 [ext_resource type="Script" uid="uid://bvuca6n1jwbfd" path="res://Scenes/Game/map_scene.gd" id="1_mw0iq"]
+[ext_resource type="Texture2D" uid="uid://b5t75bcyku5hg" path="res://assets/Background/Menu.png" id="2_v521d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw0iq"]
 bg_color = Color(0.84705883, 0.7176471, 0.69803923, 0.8784314)
@@ -38,19 +39,23 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="MapScene" type="Node2D" unique_id=1457671233]
+texture_filter = 1
 script = ExtResource("1_mw0iq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=741050165]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1183187852]
-offset_right = 1021.0
-offset_bottom = 512.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=739225681]
 layout_mode = 2
@@ -129,5 +134,15 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=845638109]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground" unique_id=159011846]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v521d")
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

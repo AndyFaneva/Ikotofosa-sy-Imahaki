@@ -11,11 +11,8 @@ extends RefCounted
 var height: int = 0
 var width: int = 0
 var time_limit: int = 0
-
-## Grille en 2 dimensions : grid[y][x] = caractère (String d'1 char)
 var grid: Array = []
 
-## Charge et parse un fichier carte. Retourne null en cas d'erreur.
 static func load_from_file(path: String) -> MapData:
 	if not FileAccess.file_exists(path):
 		push_error("MapData: fichier introuvable -> %s" % path)
@@ -28,7 +25,6 @@ static func load_from_file(path: String) -> MapData:
 
 	var map_data := MapData.new()
 
-	# --- Ligne 1 : H W time_limit ---
 	var header_line := file.get_line().strip_edges()
 	var header_parts := header_line.split(" ", false)
 
@@ -41,7 +37,6 @@ static func load_from_file(path: String) -> MapData:
 	map_data.width = int(header_parts[1])
 	map_data.time_limit = int(header_parts[2])
 
-	# --- Lignes suivantes : la grille ---
 	for y in range(map_data.height):
 		if file.eof_reached():
 			push_error("MapData: fichier trop court, ligne %d manquante" % y)
@@ -54,7 +49,6 @@ static func load_from_file(path: String) -> MapData:
 			if x < line.length():
 				row.append(line[x])
 			else:
-				# Ligne plus courte que prévu -> on complète avec du vide
 				push_warning("MapData: ligne %d trop courte, complétée avec '.'" % y)
 				row.append(".")
 
@@ -69,7 +63,6 @@ static func load_from_file(path: String) -> MapData:
 	return map_data
 
 
-## Vérifie la cohérence basique de la carte chargée.
 func is_valid() -> bool:
 	if height <= 0 or width <= 0:
 		return false
@@ -81,14 +74,12 @@ func is_valid() -> bool:
 	return true
 
 
-## Retourne le caractère à la position (x, y), ou "." si hors limites.
 func get_char(x: int, y: int) -> String:
 	if y < 0 or y >= height or x < 0 or x >= width:
 		return "."
 	return grid[y][x]
 
 
-## Petit utilitaire de debug : affiche la carte dans la console.
 func print_map() -> void:
 	print("Carte %dx%d - temps limite: %d" % [width, height, time_limit])
 	for row in grid:
